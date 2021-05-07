@@ -1,324 +1,630 @@
-<html xmlns:v="urn:schemas-microsoft-com:vml"
-xmlns:o="urn:schemas-microsoft-com:office:office"
+<html xmlns:o="urn:schemas-microsoft-com:office:office"
 xmlns:x="urn:schemas-microsoft-com:office:excel"
 xmlns="http://www.w3.org/TR/REC-html40">
 
 <head>
-<meta name="Excel Workbook Frameset">
 <meta http-equiv=Content-Type content="text/html; charset=windows-1252">
 <meta name=ProgId content=Excel.Sheet>
 <meta name=Generator content="Microsoft Excel 15">
 <link rel=File-List href="TD%20Links_files/filelist.xml">
-<![if !supportTabStrip]>
-<link id="shLink" href="TD%20Links_files/sheet001.html">
-
-<link id="shLink">
-
-<script language="JavaScript">
-<!--
- var c_lTabs=1;
-
- var c_rgszSh=new Array(c_lTabs);
- c_rgszSh[0] = "Sheet1";
-
-
-
- var c_rgszClr=new Array(8);
- c_rgszClr[0]="window";
- c_rgszClr[1]="buttonface";
- c_rgszClr[2]="windowframe";
- c_rgszClr[3]="windowtext";
- c_rgszClr[4]="threedlightshadow";
- c_rgszClr[5]="threedhighlight";
- c_rgszClr[6]="threeddarkshadow";
- c_rgszClr[7]="threedshadow";
-
- var g_iShCur;
- var g_rglTabX=new Array(c_lTabs);
-
-function fnGetIEVer()
-{
- var ua=window.navigator.userAgent
- var msie=ua.indexOf("MSIE")
- if (msie>0 && window.navigator.platform=="Win32")
-  return parseInt(ua.substring(msie+5,ua.indexOf(".", msie)));
- else
-  return 0;
-}
-
-function fnBuildFrameset()
-{
- var szHTML="<frameset rows=\"*,18\" border=0 width=0 frameborder=no framespacing=0>"+
-  "<frame src=\""+document.all.item("shLink")[0].href+"\" name=\"frSheet\" noresize>"+
-  "<frameset cols=\"54,*\" border=0 width=0 frameborder=no framespacing=0>"+
-  "<frame src=\"\" name=\"frScroll\" marginwidth=0 marginheight=0 scrolling=no>"+
-  "<frame src=\"\" name=\"frTabs\" marginwidth=0 marginheight=0 scrolling=no>"+
-  "</frameset></frameset><plaintext>";
-
- with (document) {
-  open("text/html","replace");
-  write(szHTML);
-  close();
- }
-
- fnBuildTabStrip();
-}
-
-function fnBuildTabStrip()
-{
- var szHTML=
-  "<html><head><style>.clScroll {font:8pt Courier New;color:"+c_rgszClr[6]+";cursor:default;line-height:10pt;}"+
-  ".clScroll2 {font:10pt Arial;color:"+c_rgszClr[6]+";cursor:default;line-height:11pt;}</style></head>"+
-  "<body onclick=\"event.returnValue=false;\" ondragstart=\"event.returnValue=false;\" onselectstart=\"event.returnValue=false;\" bgcolor="+c_rgszClr[4]+" topmargin=0 leftmargin=0><table cellpadding=0 cellspacing=0 width=100%>"+
-  "<tr><td colspan=6 height=1 bgcolor="+c_rgszClr[2]+"></td></tr>"+
-  "<tr><td style=\"font:1pt\">&nbsp;<td>"+
-  "<td valign=top id=tdScroll class=\"clScroll\" onclick=\"parent.fnFastScrollTabs(0);\" onmouseover=\"parent.fnMouseOverScroll(0);\" onmouseout=\"parent.fnMouseOutScroll(0);\"><a>&#171;</a></td>"+
-  "<td valign=top id=tdScroll class=\"clScroll2\" onclick=\"parent.fnScrollTabs(0);\" ondblclick=\"parent.fnScrollTabs(0);\" onmouseover=\"parent.fnMouseOverScroll(1);\" onmouseout=\"parent.fnMouseOutScroll(1);\"><a>&lt</a></td>"+
-  "<td valign=top id=tdScroll class=\"clScroll2\" onclick=\"parent.fnScrollTabs(1);\" ondblclick=\"parent.fnScrollTabs(1);\" onmouseover=\"parent.fnMouseOverScroll(2);\" onmouseout=\"parent.fnMouseOutScroll(2);\"><a>&gt</a></td>"+
-  "<td valign=top id=tdScroll class=\"clScroll\" onclick=\"parent.fnFastScrollTabs(1);\" onmouseover=\"parent.fnMouseOverScroll(3);\" onmouseout=\"parent.fnMouseOutScroll(3);\"><a>&#187;</a></td>"+
-  "<td style=\"font:1pt\">&nbsp;<td></tr></table></body></html>";
-
- with (frames['frScroll'].document) {
-  open("text/html","replace");
-  write(szHTML);
-  close();
- }
-
- szHTML =
-  "<html><head>"+
-  "<style>A:link,A:visited,A:active {text-decoration:none;"+"color:"+c_rgszClr[3]+";}"+
-  ".clTab {cursor:hand;background:"+c_rgszClr[1]+";font:9pt Arial;padding-left:3px;padding-right:3px;text-align:center;}"+
-  ".clBorder {background:"+c_rgszClr[2]+";font:1pt;}"+
-  "</style></head><body onload=\"parent.fnInit();\" onselectstart=\"event.returnValue=false;\" ondragstart=\"event.returnValue=false;\" bgcolor="+c_rgszClr[4]+
-  " topmargin=0 leftmargin=0><table id=tbTabs cellpadding=0 cellspacing=0>";
-
- var iCellCount=(c_lTabs+1)*2;
-
- var i;
- for (i=0;i<iCellCount;i+=2)
-  szHTML+="<col width=1><col>";
-
- var iRow;
- for (iRow=0;iRow<6;iRow++) {
-
-  szHTML+="<tr>";
-
-  if (iRow==5)
-   szHTML+="<td colspan="+iCellCount+"></td>";
-  else {
-   if (iRow==0) {
-    for(i=0;i<iCellCount;i++)
-     szHTML+="<td height=1 class=\"clBorder\"></td>";
-   } else if (iRow==1) {
-    for(i=0;i<c_lTabs;i++) {
-     szHTML+="<td height=1 nowrap class=\"clBorder\">&nbsp;</td>";
-     szHTML+=
-      "<td id=tdTab height=1 nowrap class=\"clTab\" onmouseover=\"parent.fnMouseOverTab("+i+");\" onmouseout=\"parent.fnMouseOutTab("+i+");\">"+
-      "<a href=\""+document.all.item("shLink")[i].href+"\" target=\"frSheet\" id=aTab>&nbsp;"+c_rgszSh[i]+"&nbsp;</a></td>";
-    }
-    szHTML+="<td id=tdTab height=1 nowrap class=\"clBorder\"><a id=aTab>&nbsp;</a></td><td width=100%></td>";
-   } else if (iRow==2) {
-    for (i=0;i<c_lTabs;i++)
-     szHTML+="<td height=1></td><td height=1 class=\"clBorder\"></td>";
-    szHTML+="<td height=1></td><td height=1></td>";
-   } else if (iRow==3) {
-    for (i=0;i<iCellCount;i++)
-     szHTML+="<td height=1></td>";
-   } else if (iRow==4) {
-    for (i=0;i<c_lTabs;i++)
-     szHTML+="<td height=1 width=1></td><td height=1></td>";
-    szHTML+="<td height=1 width=1></td><td></td>";
-   }
-  }
-  szHTML+="</tr>";
- }
-
- szHTML+="</table></body></html>";
- with (frames['frTabs'].document) {
-  open("text/html","replace");
-  charset=document.charset;
-  write(szHTML);
-  close();
- }
-}
-
-function fnInit()
-{
- g_rglTabX[0]=0;
- var i;
- for (i=1;i<=c_lTabs;i++)
-  with (frames['frTabs'].document.all.tbTabs.rows[1].cells[fnTabToCol(i-1)])
-   g_rglTabX[i]=offsetLeft+offsetWidth-6;
-}
-
-function fnTabToCol(iTab)
-{
- return 2*iTab+1;
-}
-
-function fnNextTab(fDir)
-{
- var iNextTab=-1;
- var i;
-
- with (frames['frTabs'].document.body) {
-  if (fDir==0) {
-   if (scrollLeft>0) {
-    for (i=0;i<c_lTabs&&g_rglTabX[i]<scrollLeft;i++);
-    if (i<c_lTabs)
-     iNextTab=i-1;
-   }
-  } else {
-   if (g_rglTabX[c_lTabs]+6>offsetWidth+scrollLeft) {
-    for (i=0;i<c_lTabs&&g_rglTabX[i]<=scrollLeft;i++);
-    if (i<c_lTabs)
-     iNextTab=i;
-   }
-  }
- }
- return iNextTab;
-}
-
-function fnScrollTabs(fDir)
-{
- var iNextTab=fnNextTab(fDir);
-
- if (iNextTab>=0) {
-  frames['frTabs'].scroll(g_rglTabX[iNextTab],0);
-  return true;
- } else
-  return false;
-}
-
-function fnFastScrollTabs(fDir)
-{
- if (c_lTabs>16)
-  frames['frTabs'].scroll(g_rglTabX[fDir?c_lTabs-1:0],0);
- else
-  if (fnScrollTabs(fDir)>0) window.setTimeout("fnFastScrollTabs("+fDir+");",5);
-}
-
-function fnSetTabProps(iTab,fActive)
-{
- var iCol=fnTabToCol(iTab);
- var i;
-
- if (iTab>=0) {
-  with (frames['frTabs'].document.all) {
-   with (tbTabs) {
-    for (i=0;i<=4;i++) {
-     with (rows[i]) {
-      if (i==0)
-       cells[iCol].style.background=c_rgszClr[fActive?0:2];
-      else if (i>0 && i<4) {
-       if (fActive) {
-        cells[iCol-1].style.background=c_rgszClr[2];
-        cells[iCol].style.background=c_rgszClr[0];
-        cells[iCol+1].style.background=c_rgszClr[2];
-       } else {
-        if (i==1) {
-         cells[iCol-1].style.background=c_rgszClr[2];
-         cells[iCol].style.background=c_rgszClr[1];
-         cells[iCol+1].style.background=c_rgszClr[2];
-        } else {
-         cells[iCol-1].style.background=c_rgszClr[4];
-         cells[iCol].style.background=c_rgszClr[(i==2)?2:4];
-         cells[iCol+1].style.background=c_rgszClr[4];
-        }
-       }
-      } else
-       cells[iCol].style.background=c_rgszClr[fActive?2:4];
-     }
-    }
-   }
-   with (aTab[iTab].style) {
-    cursor=(fActive?"default":"hand");
-    color=c_rgszClr[3];
-   }
-  }
- }
-}
-
-function fnMouseOverScroll(iCtl)
-{
- frames['frScroll'].document.all.tdScroll[iCtl].style.color=c_rgszClr[7];
-}
-
-function fnMouseOutScroll(iCtl)
-{
- frames['frScroll'].document.all.tdScroll[iCtl].style.color=c_rgszClr[6];
-}
-
-function fnMouseOverTab(iTab)
-{
- if (iTab!=g_iShCur) {
-  var iCol=fnTabToCol(iTab);
-  with (frames['frTabs'].document.all) {
-   tdTab[iTab].style.background=c_rgszClr[5];
-  }
- }
-}
-
-function fnMouseOutTab(iTab)
-{
- if (iTab>=0) {
-  var elFrom=frames['frTabs'].event.srcElement;
-  var elTo=frames['frTabs'].event.toElement;
-
-  if ((!elTo) ||
-   (elFrom.tagName==elTo.tagName) ||
-   (elTo.tagName=="A" && elTo.parentElement!=elFrom) ||
-   (elFrom.tagName=="A" && elFrom.parentElement!=elTo)) {
-
-   if (iTab!=g_iShCur) {
-    with (frames['frTabs'].document.all) {
-     tdTab[iTab].style.background=c_rgszClr[1];
-    }
-   }
-  }
- }
-}
-
-function fnSetActiveSheet(iSh)
-{
- if (iSh!=g_iShCur) {
-  fnSetTabProps(g_iShCur,false);
-  fnSetTabProps(iSh,true);
-  g_iShCur=iSh;
- }
-}
-
- window.g_iIEVer=fnGetIEVer();
- if (window.g_iIEVer>=4)
-  fnBuildFrameset();
-//-->
-</script>
-<![endif]><!--[if gte mso 9]><xml>
- <x:ExcelWorkbook>
-  <x:ExcelWorksheets>
-   <x:ExcelWorksheet>
-    <x:Name>Sheet1</x:Name>
-    <x:WorksheetSource HRef="TD%20Links_files/sheet001.html"/>
-   </x:ExcelWorksheet>
-  </x:ExcelWorksheets>
-  <x:Stylesheet HRef="TD%20Links_files/stylesheet.css"/>
-  <x:WindowHeight>21220</x:WindowHeight>
-  <x:WindowWidth>32767</x:WindowWidth>
-  <x:WindowTopX>32767</x:WindowTopX>
-  <x:WindowTopY>32767</x:WindowTopY>
-  <x:ProtectStructure>False</x:ProtectStructure>
-  <x:ProtectWindows>False</x:ProtectWindows>
- </x:ExcelWorkbook>
-</xml><![endif]-->
+<style id="TD Links_12699_Styles">
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+.xl1512699
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+.xl6512699
+	{padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:#0563C1;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:underline;
+	text-underline-style:single;
+	font-family:Calibri, sans-serif;
+	mso-font-charset:0;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	white-space:nowrap;}
+-->
+</style>
 </head>
 
-<frameset rows="*,39" border=0 width=0 frameborder=no framespacing=0>
- <frame src="TD%20Links_files/sheet001.html" name="frSheet">
- <frame src="TD%20Links_files/tabstrip.html" name="frTabs" marginwidth=0 marginheight=0>
- <noframes>
-  <body>
-   <p>This page uses frames, but your browser doesn't support them.</p>
-  </body>
- </noframes>
-</frameset>
+<body>
+<!--[if !excel]>&nbsp;&nbsp;<![endif]-->
+<!--The following information was generated by Microsoft Excel's Publish as Web
+Page wizard.-->
+<!--If the same item is republished from Excel, all information between the DIV
+tags will be replaced.-->
+<!----------------------------->
+<!--START OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD -->
+<!----------------------------->
+
+<div id="TD Links_12699" align=center x:publishsource="Excel">
+
+<table border=0 cellpadding=0 cellspacing=0 width=1275 style='border-collapse:
+ collapse;table-layout:fixed;width:957pt'>
+ <col width=60 style='mso-width-source:userset;mso-width-alt:2094;width:45pt'>
+ <col width=298 style='mso-width-source:userset;mso-width-alt:10402;width:224pt'>
+ <col class=xl6512699 width=917 style='mso-width-source:userset;mso-width-alt:
+ 32000;width:688pt'>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 width=60 style='height:14.5pt;width:45pt'>TDB097</td>
+  <td class=xl1512699 width=298 style='width:224pt'>TD Dividend Growth T8</td>
+  <td class=xl6512699 width=917 style='width:688pt'><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P00009V0V&amp;FundServCode=TDB097@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P00009V0V&amp;FundServCode=TDB097@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB2031</td>
+  <td class=xl1512699>TD Ultra Short Term Bond A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000PWBM&amp;FundServCode=TDB2031@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000PWBM&amp;FundServCode=TDB2031@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB2061</td>
+  <td class=xl1512699>TD Advantage Balanced Income Port A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000L2OS&amp;FundServCode=TDB2061@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000L2OS&amp;FundServCode=TDB2061@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB208</td>
+  <td class=xl1512699>TD Corporate Bond Plus A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000077KA&amp;FundServCode=TDB208@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000077KA&amp;FundServCode=TDB208@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB2081</td>
+  <td class=xl1512699>TD Advantage Balanced Port A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000L2OQ&amp;FundServCode=TDB2081@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000L2OQ&amp;FundServCode=TDB2081@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB2101</td>
+  <td class=xl1512699>TD Advantage Balanced Growth Port A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000L2OP&amp;FundServCode=TDB2101@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000L2OP&amp;FundServCode=TDB2101@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB2161</td>
+  <td class=xl1512699>TD Short Term Investment Cls A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000PWBS&amp;FundServCode=TDB2161@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000PWBS&amp;FundServCode=TDB2161@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB2221</td>
+  <td class=xl1512699>TD Canadian Equity Cls A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000PWAZ&amp;FundServCode=TDB2221@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000PWAZ&amp;FundServCode=TDB2221@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB232</td>
+  <td class=xl1512699>TD Epoch Global Shareholder Yield A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000077KB&amp;FundServCode=TDB232@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000077KB&amp;FundServCode=TDB232@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB2381</td>
+  <td class=xl1512699>TD International Growth Cls A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000PWBO&amp;FundServCode=TDB2381@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000PWBO&amp;FundServCode=TDB2381@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB2440</td>
+  <td class=xl1512699>TD Comfort Conservative Income Port</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000UVX5&amp;FundServCode=TDB2440@7&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000UVX5&amp;FundServCode=TDB2440@7&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB2461</td>
+  <td class=xl1512699>TD US Monthly Income US$ A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000TWS2&amp;FundServCode=&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000TWS2&amp;FundServCode=&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB2481</td>
+  <td class=xl1512699>TD Global Conservative Opp Adv</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000YBRL&amp;FundServCode=TDB2481@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000YBRL&amp;FundServCode=TDB2481@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB2501</td>
+  <td class=xl1512699>TD Global Balanced Opportunities Advisor</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000YBRM&amp;FundServCode=TDB2501@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000YBRM&amp;FundServCode=TDB2501@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB2521</td>
+  <td class=xl1512699>TD US Mid-Cap Growth $US A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000TW20&amp;FundServCode=TDB312@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000TW20&amp;FundServCode=TDB312@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB2581</td>
+  <td class=xl1512699>TD Tactical Monthly Inc Advisor</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000X084&amp;FundServCode=TDB2581@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000X084&amp;FundServCode=TDB2581@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB2585</td>
+  <td class=xl1512699>TD Tactical Monthly Income F</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000X07E&amp;FundServCode=TDB2585@7&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000X07E&amp;FundServCode=TDB2585@7&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB2601</td>
+  <td class=xl1512699>TD GLOBAL TACTICAL MONTHLY INCOME - Adv</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000X085&amp;FundServCode=TDB2601@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000X085&amp;FundServCode=TDB2601@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB2681</td>
+  <td class=xl1512699>TD Global Low Volatility Cl Advisor</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000X07X&amp;FundServCode=TDB2681@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000X07X&amp;FundServCode=TDB2681@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB2741</td>
+  <td class=xl1512699>TD Retirement Conservative Port A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000ZN8E&amp;FundServCode=TDB2741@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000ZN8E&amp;FundServCode=TDB2741@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB2761</td>
+  <td class=xl1512699>TD Retirement Balanced Port A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000ZN88&amp;FundServCode=TDB2761@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000ZN88&amp;FundServCode=TDB2761@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB2781</td>
+  <td class=xl1512699>TD U.S. Monthly Income Fund A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000ZN8O&amp;FundServCode=TDB2781@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000ZN8O&amp;FundServCode=TDB2781@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB2801</td>
+  <td class=xl1512699>TD Epoch International Equity A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000ZN85&amp;FundServCode=TDB2801@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000ZN85&amp;FundServCode=TDB2801@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB2821</td>
+  <td class=xl1512699>TD US Low Volatility A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000ZN8L&amp;FundServCode=TDB2821@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000ZN8L&amp;FundServCode=TDB2821@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB284</td>
+  <td class=xl1512699>TD China Income &amp; Growth A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000077IZ&amp;FundServCode=TDB284@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000077IZ&amp;FundServCode=TDB284@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB2841</td>
+  <td class=xl1512699>TD Emerging Markets Low Volatility A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000ZN83&amp;FundServCode=TDB2841@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000ZN83&amp;FundServCode=TDB2841@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB292</td>
+  <td class=xl1512699>TD Precious Metals A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000077IY&amp;FundServCode=TDB292@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000077IY&amp;FundServCode=TDB292@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB2941</td>
+  <td class=xl1512699>TD Canadian Low Volatility Advisor</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000132OE&amp;FundServCode=TDB2941@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000132OE&amp;FundServCode=TDB2941@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB2961</td>
+  <td class=xl1512699>TD Epoch US Shareholder Yield Advisor</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000132OO&amp;FundServCode=TDB2961@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000132OO&amp;FundServCode=TDB2961@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB3021</td>
+  <td class=xl1512699>TD Epoch US Shareholder Yield Advisor</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000132RJ&amp;FundServCode=TDB2961@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000132RJ&amp;FundServCode=TDB2961@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB305</td>
+  <td class=xl1512699>TD Canadian Money Market A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071NE&amp;FundServCode=TDB305@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071NE&amp;FundServCode=TDB305@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB306</td>
+  <td class=xl1512699>TD Canadian Bond A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071NG&amp;FundServCode=TDB306@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071NG&amp;FundServCode=TDB306@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB307</td>
+  <td class=xl1512699>TD Balanced Growth A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071NH&amp;FundServCode=TDB307@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071NH&amp;FundServCode=TDB307@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB308</td>
+  <td class=xl1512699>TD Canadian Equity A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071NF&amp;FundServCode=TDB308@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071NF&amp;FundServCode=TDB308@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB310</td>
+  <td class=xl1512699>TD US Blue Chip Equity A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071MZ&amp;FundServCode=TDB310@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071MZ&amp;FundServCode=TDB310@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB3111</td>
+  <td class=xl1512699>TD US$ Retirement Port A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P00016O8F&amp;fundservcode=&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P00016O8F&amp;fundservcode=&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB312</td>
+  <td class=xl1512699>TD US Mid-Cap Growth A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071MX&amp;FundServCode=TDB312@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071MX&amp;FundServCode=TDB312@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB313</td>
+  <td class=xl1512699>TD Emerging Markets A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071NC&amp;FundServCode=TDB313@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071NC&amp;FundServCode=TDB313@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB3141</td>
+  <td class=xl1512699>TD US Risk Managed Equity A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P00016O94&amp;FundServCode=TDB3141@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P00016O94&amp;FundServCode=TDB3141@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB315</td>
+  <td class=xl1512699>TD Epoch Global Equity A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071N7&amp;FundServCode=TDB315@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071N7&amp;FundServCode=TDB315@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB3151</td>
+  <td class=xl1512699>TD US Risk Managed Equity A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P00016O9C&amp;FundServCode=TDB3141@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P00016O9C&amp;FundServCode=TDB3141@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB3161</td>
+  <td class=xl1512699>TD Global Risk Managed Equity A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P00016O9K&amp;FundServCode=TDB3161@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P00016O9K&amp;FundServCode=TDB3161@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB3173</td>
+  <td class=xl1512699>TD US Quantitative Equity F</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P00018N6S&amp;FundServCode=TDB3173@7&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P00018N6S&amp;FundServCode=TDB3173@7&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB320</td>
+  <td class=xl1512699>TD Health Sciences A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071N5&amp;FundServCode=TDB320@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071N5&amp;FundServCode=TDB320@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB3201</td>
+  <td class=xl1512699>TD Canadian Corporate Bond A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P00017KH6&amp;FundServCode=TDB3201@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P00017KH6&amp;FundServCode=TDB3201@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB322</td>
+  <td class=xl1512699>TD Science &amp; Technology A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071N2&amp;FundServCode=TDB322@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071N2&amp;FundServCode=TDB322@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB3221</td>
+  <td class=xl1512699>TD US Corporate Bond A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P00017NBQ&amp;FundServCode=&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P00017NBQ&amp;FundServCode=&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB324</td>
+  <td class=xl1512699>TD Glo Entertainment &amp; Communications</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071NA&amp;FundServCode=TDB324@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071NA&amp;FundServCode=TDB324@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB3311</td>
+  <td class=xl1512699>TD North American Small-Cap Equity-A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0001BL50&amp;FundServCode=TDB3311@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0001BL50&amp;FundServCode=TDB3311@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB3331</td>
+  <td class=xl1512699>TD Global Income A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0001BL54&amp;FundServCode=TDB3331@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0001BL54&amp;FundServCode=TDB3331@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB3371</td>
+  <td class=xl1512699>TD Global Unconstrained Bond A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0001BL5G&amp;FundServCode=TDB3371@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0001BL5G&amp;FundServCode=TDB3371@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB3411</td>
+  <td class=xl1512699>TD US Dividend Growth-A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0001BL67&amp;FundServCode=TDB3411@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0001BL67&amp;FundServCode=TDB3411@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB3450</td>
+  <td class=xl1512699>TD Global Equity Focused Investor</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0001EDJW&amp;FundServCode=TDB3450@7&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0001EDJW&amp;FundServCode=TDB3450@7&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB436</td>
+  <td class=xl1512699>TD Canadian Bond Index F</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000075V2&amp;FundServCode=TDB436@7&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000075V2&amp;FundServCode=TDB436@7&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB437</td>
+  <td class=xl1512699>TD Canadian Index F</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000075V5&amp;FundServCode=TDB437@7&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000075V5&amp;FundServCode=TDB437@7&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB438</td>
+  <td class=xl1512699>TD DJIA Index F</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000075V8&amp;FundServCode=TDB438@7&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000075V8&amp;FundServCode=TDB438@7&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB439</td>
+  <td class=xl1512699>TD US Index F</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000075VT&amp;FundServCode=TDB439@7&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000075VT&amp;FundServCode=TDB439@7&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB440</td>
+  <td class=xl1512699>TD US Index Currency Neutral F</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000075VV&amp;FundServCode=TDB440@7&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000075VV&amp;FundServCode=TDB440@7&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB441</td>
+  <td class=xl1512699>TD NASDAQ Index F</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000075VN&amp;FundServCode=TDB441@7&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000075VN&amp;FundServCode=TDB441@7&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB442</td>
+  <td class=xl1512699>TD European Index F</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000075VE&amp;FundServCode=TDB442@7&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000075VE&amp;FundServCode=TDB442@7&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB443</td>
+  <td class=xl1512699>TD International Index F</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000075VK&amp;FundServCode=TDB443@7&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000075VK&amp;FundServCode=TDB443@7&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB444</td>
+  <td class=xl1512699>TD International Index Curr Neutral F</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000075VL&amp;FundServCode=TDB444@7&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000075VL&amp;FundServCode=TDB444@7&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB677</td>
+  <td class=xl1512699>TD US Quantitative Equity I</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000715Z&amp;FundServCode=TDB677@7&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000715Z&amp;FundServCode=TDB677@7&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB679</td>
+  <td class=xl1512699>TD Diversified Monthly Income A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000083WH&amp;FundServCode=TDB679@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000083WH&amp;FundServCode=TDB679@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB684</td>
+  <td class=xl1512699>TD North American Dividend A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000083WJ&amp;FundServCode=TDB684@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000083WJ&amp;FundServCode=TDB684@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB695</td>
+  <td class=xl1512699>TD Canadian Core Plus Bond A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P00009V0H&amp;FundServCode=TDB695@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P00009V0H&amp;FundServCode=TDB695@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB732</td>
+  <td class=xl1512699>TD Managed Balanced Growth Port T5</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000A8F1&amp;FundServCode=TDB732@3,TDB802@1,TDB812@8,TDB892@8&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000A8F1&amp;FundServCode=TDB732@3,TDB802@1,TDB812@8,TDB892@8&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB740</td>
+  <td class=xl1512699>TD Managed Income Port A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000074TN&amp;FundServCode=TDB135@8,TDB740@3,TDB760@1,TDB780@8&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000074TN&amp;FundServCode=TDB135@8,TDB740@3,TDB760@1,TDB780@8&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB741</td>
+  <td class=xl1512699>TD Managed Inc &amp; Mod Growth Port A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000072GP&amp;FundServCode=TDB136@8,TDB741@3,TDB761@1,TDB781@8&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000072GP&amp;FundServCode=TDB136@8,TDB741@3,TDB761@1,TDB781@8&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB742</td>
+  <td class=xl1512699>TD Managed Balanced Growth Port A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000072O2&amp;FundServCode=TDB137@8,TDB742@3,TDB762@1,TDB782@8&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000072O2&amp;FundServCode=TDB137@8,TDB742@3,TDB762@1,TDB782@8&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB743</td>
+  <td class=xl1512699>TD Managed Aggressive Growth Port A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000072F7&amp;FundServCode=TDB138@8,TDB743@3,TDB763@1,TDB783@8&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000072F7&amp;FundServCode=TDB138@8,TDB743@3,TDB763@1,TDB783@8&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB744</td>
+  <td class=xl1512699>TD Managed Max Equity Growth Port A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P00007220&amp;FundServCode=TDB139@8,TDB744@3,TDB764@1,TDB784@8&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P00007220&amp;FundServCode=TDB139@8,TDB744@3,TDB764@1,TDB784@8&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB755</td>
+  <td class=xl1512699>TD Real Return Bond A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000072AP&amp;FundServCode=TDB755@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000072AP&amp;FundServCode=TDB755@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB756</td>
+  <td class=xl1512699>TD Dividend Growth A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000720M&amp;FundServCode=TDB756@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000720M&amp;FundServCode=TDB756@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB814</td>
+  <td class=xl1512699>TD Short Term Bond A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000073IL&amp;FundServCode=TDB814@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000073IL&amp;FundServCode=TDB814@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB815</td>
+  <td class=xl1512699>TD Global Core Plus Bond A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000073TK&amp;FundServCode=TDB815@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000073TK&amp;FundServCode=TDB815@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB816</td>
+  <td class=xl1512699>TD Income Advantage Port A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000072Z2&amp;FundServCode=TDB816@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000072Z2&amp;FundServCode=TDB816@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB817</td>
+  <td class=xl1512699>TD US Equity Port A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000074TO&amp;FundServCode=TDB124@8,TDB817@3,TDB873@1,TDB883@8&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000074TO&amp;FundServCode=TDB124@8,TDB817@3,TDB873@1,TDB883@8&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB820</td>
+  <td class=xl1512699>TD Dividend Income A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000073KG&amp;FundServCode=TDB820@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000073KG&amp;FundServCode=TDB820@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB821</td>
+  <td class=xl1512699>TD Monthly Income A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071LQ&amp;FundServCode=TDB821@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071LQ&amp;FundServCode=TDB821@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB822</td>
+  <td class=xl1512699>TD High Yield Bond A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000729S&amp;FundServCode=TDB822@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000729S&amp;FundServCode=TDB822@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB825</td>
+  <td class=xl1512699>TD Canadian Small-Cap Equity A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071KX&amp;FundServCode=TDB825@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071KX&amp;FundServCode=TDB825@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB826</td>
+  <td class=xl1512699>TD Epoch US Large-Cap Value A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071ZF&amp;FundServCode=TDB826@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000071ZF&amp;FundServCode=TDB826@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB827</td>
+  <td class=xl1512699>TD US Small Cap Equity A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000725S&amp;FundServCode=TDB827@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000725S&amp;FundServCode=TDB827@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB828</td>
+  <td class=xl1512699>TD Resource A</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000072N1&amp;FundServCode=TDB828@3&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P000072N1&amp;FundServCode=TDB828@3&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB885</td>
+  <td class=xl1512699>TD Comfort Balanced Income Port I</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000IUYK&amp;FundServCode=TDB885@7&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000IUYK&amp;FundServCode=TDB885@7&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB886</td>
+  <td class=xl1512699>TD Comfort Balanced Port I</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000IUYJ&amp;FundServCode=TDB886@7&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000IUYJ&amp;FundServCode=TDB886@7&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB887</td>
+  <td class=xl1512699>TD Comfort Balanced Growth Port I</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000IUYI&amp;FundServCode=TDB887@7&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000IUYI&amp;FundServCode=TDB887@7&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB888</td>
+  <td class=xl1512699>TD Comfort Growth Port I</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000IUYH&amp;FundServCode=TDB888@7&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000IUYH&amp;FundServCode=TDB888@7&amp;lang=en-CA</a></td>
+ </tr>
+ <tr height=19 style='height:14.5pt'>
+  <td height=19 class=xl1512699 style='height:14.5pt'>TDB889</td>
+  <td class=xl1512699>TD Comfort Aggressive Growth Port I</td>
+  <td class=xl6512699><a
+  href="https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000IRUY&amp;FundServCode=TDB889@7&amp;lang=en-CA">https://www.morningstar.ca/ca/report/fund/risk.aspx?t=0P0000IRUY&amp;FundServCode=TDB889@7&amp;lang=en-CA</a></td>
+ </tr>
+ <![if supportMisalignedColumns]>
+ <tr height=0 style='display:none'>
+  <td width=60 style='width:45pt'></td>
+  <td width=298 style='width:224pt'></td>
+  <td width=917 style='width:688pt'></td>
+ </tr>
+ <![endif]>
+</table>
+
+</div>
+
+
+<!----------------------------->
+<!--END OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD-->
+<!----------------------------->
+</body>
+
 </html>
